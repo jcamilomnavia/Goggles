@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Practica 2 - Projectes Web I</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/list.css">
+    <link rel="stylesheet" type="text/css" href="css/detail.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Oscar Pozuelo">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <header>
+        <h1 id="titleLogo">Goggles</h1>
+        <nav>
+            <div id="menuToggle">
+                <input type="checkbox">
+                <div id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="menu_hamburguesa">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" onclick="showList()">List</a></li>
+                    <li><a href="#">Search</a></li>
+                    <li><a href="index2.html">Cart</a></li>
+                    <li><a href="#">Favorite</a></li>
+                </ul>
+                <ul id="menu_desktop">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" onclick="showList()">List</a></li>
+                    <li><a href="index2.html">Cart</a></li>
+                    <li><a href="#">Favorite</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="searchBar">
+            <figure>
+                <img src="images/search_icon.svg" alt="Menu Icon" width="26">
+            </figure>
+            <input id="search" type="checkbox">
+            <div id="barraBusqueda">
+                <input type="text" placeholder="Search...">
+                <div id="fondobusqueda" />
+            </div>
+        </div>
+    </header>
+    <div class="bigContainer">
+        <div class="container">
+            <div id="bodyList" class="mainpage">
+                <div class="styles">
+                    <div class="style">ALL</div>
+                    <div class="style">CLASSIC</div>
+                    <div class="style">NEW</div>
+                    <div class="style">CHIC</div>
+                    <div class="style">GRAND</div>
+                    <div class="style">ORIGINAL</div>
+                </div>
+                <div id="items" class="items">
+
+                </div>
+            </div>
+            <div id="mainpage" class="detailMain">
+
+            </div>
+
+            <!-- <footer>
+                <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5VxrDVcbWFbG9ERygyGqNs-kQAbbzIpgv2atUDHJL7RRA8gIk&s" width="20" height="20" alt="icon_1"></div>
+                <div><img src="https://www.sccpre.cat/mypng/detail/59-591036_to-do-list-comments-todo-list-svg.png" width="20" height="20" alt="icon_2"> </div>
+                <div><img src="https://img.icons8.com/pastel-glyph/2x/like.png" width="25" height="25" alt="icon_3"></div>
+                <div><img src="https://image.flaticon.com/icons/png/512/8/8109.png" width="25" height="25" alt="icon_4"></div>
+            </footer> -->
+        </div>
+    </div>
+</body>
+<script src="js/api.js"></script>
+
+</html>

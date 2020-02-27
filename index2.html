@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Goggles, list, search, cart, favorite">
+  <meta name="author" content="Inés Díaz de Sandi Serrano">
+  <meta name="description" content="Inés Díaz de Sandi Serrano">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goggles</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/header.css">
+  <link rel="stylesheet" type="text/css" href="css/cart.css">
+  <link rel="stylesheet" type="text/css" href="css/payment.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1 id="titleLogo">Goggles</h1>
+    <nav>
+      <div id="menuToggle">
+        <input type="checkbox">
+        <div id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="menu_hamburguesa">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">List</a></li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#" onclick="showCart()">Cart</a></li>
+          <li><a href="#">Favorite</a></li>
+        </ul>
+        <ul id="menu_desktop">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">List</a></li>
+          <li><a href="#" onclick="showCart()">Cart</a></li>
+          <li><a href="#">Favorite</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="searchBar">
+      <figure>
+        <img src="images/search_icon.svg" alt="Menu Icon" width="26">
+      </figure>
+      <input id="search" type="checkbox">
+      <div id="barraBusqueda">
+        <input type="text" placeholder="Search...">
+        <div id="fondobusqueda" />
+      </div>
+    </div>
+  </header>
+
+  <div id="cartBody">
+    <div class="list">
+      <div class="title">
+        <span>CART</span>
+      </div>
+      <div class="items" id="items">
+
+      </div>
+
+      <div class="containerPayment">
+        <label>DISCOUNT CODE</label>
+        <div class="inputDisc">
+          <input type="text" tabindex="2">
+          <button class="buttonDisc">APPLY</button>
+        </div>
+      </div>
+
+      <div id="totalCart" class="total totalCart">
+        <label>TOTAL</label>
+        <div class="totalDiv"><span id="price">0 €</span></div>
+      </div>
+
+      <a id="checkOutCart" href="#" onclick="removeGlasses();"><span>CHECK OUT</span></a>
+
+    </div>
+  </div>
+
+
+
+  <div id="paymentBody" style="display: none;">
+    <section class="paymentGrid">
+      <div class="title">
+        <h1>PAYMENT</h1>
+        <!-- <span >PAYMENT</span> -->
+      </div>
+      <form class="paymentForm" onsubmit="pay(this)">
+
+        <div class="containerPayment">
+          <label>ADDRESS</label>
+          <input class="inputPayment" type="text" id="countryPayment" list="countryList" placeholder="Select your country"
+            tabindex="1" onkeydown="if(event.keyCode==13) event.keyCode=9;" onkeypress="searchCountry(this,event)"
+            required>
+          <datalist id="countryList">
+
+          </datalist>
+        </div>
+
+        <div class="containerPayment">
+          <label>SHIPPING</label>
+          <input id="addressPayment" class="inputPayment" type="text" placeholder="Free Shipping worldwide" tabindex="2" required>
+        </div>
+
+        <div class="paymentMethod">
+          <label>PAYMENT METHOD</label>
+          <div class="paymentBtns">
+            <button id="visa" type="button" class="visaBtn selectedPay" onclick="selectPayment(this)"></button>
+            <button id="paypal" type="button" class="paypalBtn" onclick="selectPayment(this)"><img alt="paypal"
+                src="./images/PayPal.svg"></button>
+          </div>
+        </div>
+
+        <div class="total">
+          <label>TOTAL</label>
+          <div class="totalDiv"><span id="finalPrice">0 €</span></div>
+        </div>
+
+        <div class="complete" type="submit" onclick="verifyPayment()">
+          <div id="complete" class="completeBtn">
+            <div class="textBtn"><span>COMPLETE</span></div>
+            <div class="completeBtnTransition"> </div>
+          </div>
+        </div>
+
+      </form>
+    </section>
+  </div>
+
+
+</body>
+<script src="js/header.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/payment.js"></script>
+
+</html>

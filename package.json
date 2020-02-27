@@ -1,0 +1,17 @@
+{
+  "name": "practica-4",
+  "version": "1.0.0",
+  "description": "Practica 4 Proyectos Web I 2019 Salle URL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Grupo 9",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0"
+  }
+}

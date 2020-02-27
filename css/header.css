@@ -1,0 +1,345 @@
+/*  */
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+:root {
+  --text-color: #302F2F;
+  --background-color: #fff;
+  --menu-background: #ededed;
+}
+/* 
+body{
+  background-color:var(--background-color);
+} */
+
+header{
+    display: flex;
+    height: 60px;
+    z-index: 4;
+}
+
+#titleLogo{
+    display: flex;
+    width: 70%;
+    z-index: 5;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: lowercase;
+    order: 2;
+    align-content: center;
+    justify-content: center;
+}
+
+nav{
+    display: flex;
+    width: 20%;
+    order: 1;
+    z-index: 4;
+}
+#menuToggle {
+order: 1;
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 3;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  top: -40px;
+  left: -45px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 4;
+}
+
+#menuToggle div span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #000;
+  border-radius: 3px;
+  
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+
+    z-index: 4;
+}
+
+#hamburger > span:nth-child(1)
+{
+  transform-origin: 0% 0%;
+}
+
+#hamburger > span:nth-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked + div span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked + div span:nth-child(2)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked + div span:nth-child(3)
+{
+  transform: rotate(-45deg) translate(-3px, -3px);
+}
+
+#hamburger{
+    margin: -30px;
+}
+
+@keyframes menuAnimation {
+  0%{
+    background-color: rgba(226, 226, 226, 0);
+    color:  rgba(48, 47, 47, 0);
+  }
+  
+  100%{
+    background-color: rgba(226, 226, 226, 1);
+    color: rgba(105, 105, 105, 1)
+}
+}
+#menu_hamburguesa
+{
+  position: absolute;
+  width: 280px;
+  height: 554px;
+  margin: -90px 0 0 -55px;
+  padding: 50px;
+  padding-top: 125px;
+  text-transform: uppercase;
+ /* box-shadow: 0 0 20px 10px var(--menu-background);*/
+  
+  font-family: Roboto;
+  line-height: 70px;
+
+  background: var(--menu-background);
+  list-style-type: none;
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s ease-in-out;
+  z-index: 3;
+}
+
+#menu_hamburguesa li a
+{
+  padding: 10px 0;
+  font-size: 36px;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+#menu_desktop{
+  display: none;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+#searchBar{
+  display: block;
+  position: relative;
+  width: 20%;
+  order: 3;
+}
+
+#search{
+    width: 100%;
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 7;
+}
+
+@keyframes searchAnimationBack {
+  0%{
+    background-color: rgba(226, 226, 226, 1);
+    color: rgba(105, 105, 105, 1)
+  }
+  
+  100%{
+    background-color: rgba(226, 226, 226, 0);
+    color:  rgba(105, 105, 105, 0);
+  }
+}
+
+#fondobusqueda{
+  left: -82vw;
+  position: absolute;
+  width: 105vw;
+  height: 105vh;
+  background-color: white;
+  z-index: 4;
+  display: none;
+}
+
+#barraBusqueda input
+  {
+    position: absolute;
+    width: 450%;
+    margin: 70px 0 0 -425%;
+    padding: 15px;
+    display: none;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-size: 24px;
+    border-radius: 20px;
+    border: none;
+    background-color:#E2E2E2;
+    z-index: 6;
+    animation: searchAnimationBack 0.5s linear;
+  }
+
+#searchBar figure{
+    z-index: 6;
+    position: absolute;
+    left: -20px;   
+}
+
+@keyframes searchAnimation {
+  0%{
+    background-color: rgba(226, 226, 226, 0);
+    color:  rgba(105, 105, 105, 0);
+  }
+  
+  100%{
+    background-color: rgba(226, 226, 226, 1);
+    color: rgba(105, 105, 105, 1)
+  }
+}
+
+#search:checked + #barraBusqueda input{
+    display: block;
+    animation: searchAnimation .5s linear;
+}
+
+#search:checked + #barraBusqueda #fondobusqueda{
+  display: block;
+  animation: searchAnimation .5s linear;
+}
+
+@media only screen and (min-width: 865px) {
+  h1{
+    width: 30%;
+  }
+  
+  nav{
+    width: 35%;
+  }
+
+  #hamburger{
+    margin: -40px;
+  }
+
+  #menuToggle{
+    left: 10px;
+  }
+  #menu_hamburguesa{
+    display: none;
+  }
+  #menuToggle > input:nth-child(1){
+    display: none;
+  }
+
+  #menuToggle div span{
+    display: none;
+  }
+  #menu_desktop{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Roboto;
+    text-transform: uppercase;
+  }
+
+  #menu_desktop li{
+    width: 70px;
+    list-style-type:none;
+  }
+
+  #menu_desktop li a{
+    text-decoration: none;
+    color: #302F2F;
+  }
+
+  li marker{
+    display: none;
+  }
+  
+  #searchBar{
+    width: 30%;
+    align-content: center;
+    display: flex;
+  }
+  #searchBar figure{
+    width: 20px;
+    margin: 0;
+    top: 20px;
+    left: 80%;
+    align-content: center;
+    justify-content: flex-end;
+
+  }
+
+  #searchBar figure img{
+    width: 20px;
+  }
+
+  #barraBusqueda{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  #barraBusqueda input{
+    display: flex;
+    width: 70%;
+    height: 10px;
+    margin: 0;
+    top: 10px;
+    left: 15%;
+    font-size: .9em;
+    text-transform: initial;
+  }
+  #search {
+    display: none;
+  }
+}

@@ -1,0 +1,440 @@
+ body{
+   height: 100vh;
+   overflow-y: hidden;
+ }
+ 
+ #paymentBody{
+  height: 100vh;
+  font-family: Roboto , sans-serif !important;
+  font-style: normal;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F6F6F6;
+} 
+
+.paymentGrid{
+  width: 83vw;
+  margin:auto;
+  z-index: 1;
+  /* margin-bottom: 30px !important; */
+  /* height: 100vh;
+  font-family: Roboto , sans-serif !important;
+  font-style: normal;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F6F6F6; */
+}
+
+.title{
+  width: 100%;
+  height: 28px;
+
+  font-weight: 300;
+  font-size: 25px ;
+  text-transform: uppercase;
+  color: #888484;
+
+  margin-bottom:20px
+}
+
+.title h1{
+  font-weight: 300;
+  font-size: 25px ;
+  text-transform: uppercase;
+  color: #888484;
+
+}
+
+.paymentForm{
+  width: 100%;
+}
+
+label{
+  width: 111px;
+  height: 14px;
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #888484;
+}
+
+.inputPayment{
+  padding-left: 20px;
+  width: 100%;
+  height: 49px;
+
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #888484;
+
+  border:none;
+  background: #E2E2E2;
+  border-radius: 20px;
+  box-sizing : border-box;
+  margin:10px 0px 28px 0px;
+}
+
+.inputPayment:invalid {
+  background-color: red;
+  color: white;
+}
+
+.inputPayment:valid {
+  background: #E2E2E2;
+}
+
+.inputPayment:required:invalid {
+  animation: shake .6s linear;
+  background-color: red;
+  color: white;
+}
+
+button:focus, .inputPayment:focus{
+  outline: none;
+}
+
+button{
+  border-radius:20px;
+  border: none;
+  height: 49px;
+  vertical-align: middle;
+  margin:10px 0px 25px 0px ;
+}
+
+.paymentBtns{
+  margin:0px 0px 10px 0px;
+}
+
+.visaBtn{
+  background-image: url("../images/visa-white.svg");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #2D5793;
+  width: 120px;
+  margin-right: 8px;
+}
+
+
+.paypalBtn{
+  background-image: url("../images/PayPal.svg");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background: #F7C457;
+  width: 168px;
+}
+
+.total{
+  vertical-align: middle;
+  float:right;
+  z-index: 3;
+}
+
+.totalDiv{
+  display: inline-flex;
+  width: 168px;
+  height: 49px;
+
+  border:none;
+  background: #E2E2E2;
+  border-radius: 20px;
+  
+  font-weight: 300;
+  font-size: 24px !important;
+  line-height: 28px;
+
+  color: #888484;
+
+  margin-left:8px;
+}
+
+.totalDiv > span {
+  display:table;
+  align-self: center;
+  margin:0 auto; 
+}
+
+
+
+
+@media screen and (min-width: 800px){
+  #paymentBody{
+    /* margin-top: -10%; */
+    height: 100%;
+    background: #E4B080;
+    padding-top:5% ;
+  }
+
+  .paymentGrid{
+    /* margin-top: 10%; */
+    width: 70vw;
+    background: #F8F8F8;
+    border-radius: 47px;
+  }
+
+  .title{
+    margin-top:26px;
+    display: inline-flex;
+  }
+
+  .paymentForm{
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  .title > span{
+    display:table !important;
+    margin:0 auto; 
+    text-align: center;
+  }
+
+  .title > h1{
+    display:table !important;
+    margin:0 auto; 
+    text-align: center;
+  }
+
+  .containerPayment{
+    display: table;
+    width: 100%;
+  }
+
+  .containerPayment label{
+    display: table-cell;
+  }
+
+  .containerPayment .inputPayment{
+    display: table-cell;
+    width:100%;
+  }
+
+  .paymentMethod{
+    display: inline;
+  }
+
+  .paymentBtns{
+    display: inline;
+    margin:0px 0px 0px 20px;
+    /* margin-left: 10px */
+    /* width: auto; */
+  }
+  .visaBtn{
+    background-size: 45%;
+    width: 25%;
+  }
+
+  .paypalBtn{
+    background-size: 45%;
+    float: right;
+    width: 35%;
+  }
+
+  .total{
+    display: table;
+    width: 100%;
+  }
+
+  .total label{
+    display: table-cell;
+  }
+
+  .total:nth-child(2) {
+    display: table-cell;
+    align-self: center;
+  }
+
+  .totalDiv{
+    width: 100%;
+  }
+  
+}
+
+@media screen and (max-width:940px){
+  .paymentBtns{
+    display: block;
+  }
+
+  .visaBtn{
+    background-size: 45%;
+    width: 45%;
+  }
+
+  .paypalBtn{
+    width: 45%;
+  }
+
+}
+
+.complete{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: min-content; 
+  cursor: grab;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  vertical-align: middle;
+  text-align: center;
+  margin-top:30px !important;
+  margin-bottom:30px !important;
+}
+
+.completeBtn{
+  position: relative;
+
+  width: 100%;
+  height: 60px;
+
+  background: #E66D29;
+  border-radius: 16px;
+
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  vertical-align: middle;
+  text-align: center;
+
+  color: #FFFFFF;
+
+  overflow: hidden;
+
+   /* animation: bounce 2s infinite;
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite; */
+  transition: all .35s;
+}
+
+.completeBtn:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 16px;
+  background: orange;
+  transition: all .35s;
+}
+
+.completeBtn > .textBtn{
+  display: table;
+  width: 100%;
+  height: 60px; 
+
+  text-align: center;
+  vertical-align: middle;
+
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  color: #FFFFFF;
+}
+
+.textBtn > span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 2;
+}
+
+/* .completeBtnTransition{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  top:-60px;
+  left:0;
+
+  background: #93471C;
+  border-radius: 16px;
+
+  z-index: 2;
+}
+
+.completeBtn:active > .completeBtnTransition{
+  -moz-animation: colordown 0.5s forwards;
+  -webkit-animation: colordown 0.5s forwards;
+  animation: colordown 0.5s forwards;
+ transition-delay: 2s;
+
+}
+
+.completeBtn:focus > .completeBtnTransition{
+  -moz-animation: colordown 0.5s forwards;
+  -webkit-animation: colordown 0.5s forwards;
+  animation: colordown 0.5s forwards;
+} */
+
+.complete:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 16px;
+  background: #93471C;
+  transition: all .35s;
+}
+
+.complete:hover{
+  color: #fff;
+}
+
+.complete:hover:after{
+  width: 100%;
+}
+
+
+
+@keyframes bounce{
+  20%, 53%, 80%, 0%, 100% {
+      -webkit-animation-timing-function: cubic-bezier(0.215,.61,.355,1);
+      animation-timing-function: cubic-bezier(0.215,.61,.355,1);
+      -webkit-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+  }
+  40%, 43% {
+      -webkit-animation-timing-function: cubic-bezier(0.755,.050,.855,.060);
+      animation-timing-function: cubic-bezier(0.755,.050,.855,.060);
+      -webkit-transform: translate3d(0,-30px,0);
+      transform: translate3d(0,-20px,0);
+  }
+  70% {
+      -webkit-animation-timing-function: cubic-bezier(0.755,.050,.855,.060);
+      animation-timing-function: cubic-bezier(0.755,.050,.855,.060);
+      -webkit-transform: translate3d(0,-15px,0);
+      transform: translate3d(0,-15px,0);
+  }
+  90% {
+      -webkit-transform: translate3d(0,-4px,0);
+      transform: translate3d(0,-4px,0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+@keyframes colordown {
+  0%{
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+  }
+  5%{ background: white;}
+  100%{ 
+    transform: translateY(60px);
+    -webkit-transform: translateY(60px);
+    -moz-transform: translateY(60px);
+  }
+}
+
+.inputPayment::placeholder{
+  color:white;
+}
+
+.selectedPay{
+  border: 4px solid #E66D29;
+}
